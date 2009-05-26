@@ -1,3 +1,21 @@
+magit (0.8~pessi2) intrepid; urgency=low
+
+  * New upstream:
+  
+  * A tiny bit of refactoring
+  * When committing a merge, use .git/MERGE_MSG
+  * Preliminary support for "topic branches"
+  * Added new ! command (magit-shell-command)
+  * Some news.
+  * Document new behavior of 'c' and 'C' during a rebase.
+  * Improve treatment of unmerged files in "Staged changes".
+  * Document changes to pull.
+  * When pulling, ask for branch if none is configured.
+  * Make rebasing work again, and improve it a bit.
+  * Elpanized.
+
+ -- Pekka Pessi <Pekka.Pessi@nokia.com>  Tue, 26 May 2009 21:07:24 +0300
+
 magit (0.8~pessi1) intrepid; urgency=low
 
   * Ubuntu-ized.
