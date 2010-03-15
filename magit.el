@@ -2210,7 +2210,8 @@ in log buffer."
 				     (or (magit-default-rev)
 					 "HEAD^"))
 		     current-prefix-arg))
-  (if rev
+  (if (and rev (or (not hard)
+		   (yes-or-no-p "Discard all uncommitted changes? ")))
       (magit-run-git "reset" (if hard "--hard" "--soft")
 		     (magit-rev-to-git rev))))
 
