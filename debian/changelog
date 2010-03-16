@@ -1,3 +1,91 @@
+magit (0.8~pessi3) karmic; urgency=low
+
+  * Use yes-or-no-p with hard reset
+  
+  * New upstream:
+    * Remove 'HEAD' from ref list.
+    * Refs matching was too greedy and causing some logs not to render.
+    * Use `magit-present-log-line-function'.
+    * Box around labels.
+    * Better label colours for lighter backgrounds.
+    * Highlight refs according to their origin.
+    * Use --decorate=full so that it works again with Git 1.6.4.
+    * Moved graph to the second column.
+    * Highlighting of sha and graph in log buffer.
+    * Replaced call-process-region with start-file-process and wait.
+    * In magit-ignore-file, add a new line if there wasn't one in 
+      the ignore file
+    * emulate append-to-file, because it doesn't work over tramp
+    * Make async git invocation work on cygwin.
+    * Fixed svn-ref-info for most non-standard layouts
+    * magit-get-all is wrapper for git config --get-all
+    * Highlight only the diff markers (not the text after them).
+    * Removed redundant call from `magit-get-svn-ref-info'.
+    * Added `magit-omit-untracked-dir-contents' to optionally stop magit
+      listing everything in an untracked directory.
+    * Set the remote string to the svn url and revision when in a git-svn repo.
+    * A simple caching mechanism to ease the `magit-get-svn-ref-info' pain.
+    * More detailed and structured information from git-svn.
+    * `magit-get-svn-ref' now emulates the git-svn way of remote fetching.
+    * Bug fix: Commit buffer will fill if the commit is current and 
+      the buffer dead.
+    * C-u will now keep the index when stashing.
+    * Squashable, manual merges.
+    * completing-read-configuration: Great with `anything-completing-read' 
+      or perhaps `ido-completing-read'.
+    * Make magit ask for ssh passphrase
+    * Acknowledge Rémi Vanicat.
+    * [Tramp] Two more fix, make staging with magit on tramp dir possible
+    * Always use magit-git-standard-options when calling git
+    * Use --decorate=full so that it works again with Git 1.6.4.
+    * Produce cleaner status buffer for unmerged files.
+    * Towards 0.8.
+    * Don't use the heavy machinery to run "git update-index".
+    * Refresh the index before constructing the status buffer.
+    * Speed up washing of untracked files a bit.
+    * Hide diffs by default again.
+    * Make sure current-prefix-arg is a cons before caring it.
+    * Support for magit-repo-dirs and nice completion based on it.
+    * Only revert buffers that belong to the current repo.
+    * Reinitialize modes when reverting file contents.
+    * Optionally stage also untracked files in magit-stage-all.
+    * Stage all untracked files when on "Untracked files" title.
+    * Use diff-index and diff-files for the status buffer.
+    * Document why empty diff sections are no problem.
+    * Mention performance improvements in NEWS.
+    * Do not run Git via the shell, ever.
+    * Fix "resolge" type in error message.
+    * Make 'a' and 'v' work with whole diffs.
+    * Fix -U for diffs in the status buffer.
+    * Fix display of unmerged paths.
+    * Hide status diffs by default again.
+    * Don't include git-svn branches in the 'interesting branches'.
+    * Make magit-ref-exists-p work.
+    * Cosmetics.
+    * Directly look for git-svn ref name, don't use
+      magit-list-interesting-refs.
+    * Only discard staged diffs for files that don't have unstaged changes.
+    * Don't allow slashes in remote nicknames.
+    * Fix display of unpushed/unpulled git-svn patches
+    * It' magit-wash-diff-section, not magit-wash-section-diff...
+    * Don't use make-variable-buffer-local during mode setup.
+    * Delay inserting and washing of big diffs.
+    * README updates.
+    * Be robust against the *magit-process* buffer getting killed.
+    * Make discarding staged diffs work.
+    * Don't mess with the global value of line-move-visual.
+    * Explicitly disallow rewriting history from the first commit.
+    * Fix shell escaping.
+    * Document C-c C-s signoff toggling.
+    * Allow overriding of magit-commit-signoff per commit.
+    * Document changes.
+    * Don't use refs/heads/ prefix when checking out branches.
+    * Offer to create tracking branches when switching to a remote branch.
+    * Use git show-ref to find interesting refs.
+    * We are interested in refs not revs.
+
+ -- Pekka Pessi <Pekka.Pessi@nokia.com>  Tue, 16 Mar 2010 15:14:47 +0200
+    
 magit (0.8~pessi2) intrepid; urgency=low
 
   * New upstream:
