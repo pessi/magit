@@ -1,0 +1,32 @@
+#!/bin/sh
+# /usr/lib/emacsen-common/packages/install/foo
+# [ This particular script hasn't been tested, so be careful. ]
+set -e
+PACKAGE=magit
+
+FLAVOR=$1
+echo install/${PACKAGE}: Handling install of emacsen flavor ${FLAVOR}
+
+byte_compile_options="-batch -f batch-byte-compile"
+el_files="magit-topgit.el magit.el magit-key-mode.el magit-svn.el"
+el_dir=/usr/share/emacs/site-lisp/${PACKAGE}/
+elc_dir=/usr/share/${FLAVOR}/site-lisp/${PACKAGE}/
+
+if [ ${FLAVOR} != emacs ]
+then
+  echo install/${PACKAGE}: byte-compiling for ${FLAVOR}
+
+  [ -d ${elc_dir} ] || mkdir ${elc_dir}
+
+  # Symlink the .el files (emacsen policy 6E)
+  for i in ${el_files}
+  do
+    ln -fs ../../../emacs/site-lisp/${PACKAGE}/${i} ${elc_dir}/${i}
+  done
+  
+  # Byte compile them
+  (cd ${elc_dir} \
+   && ${FLAVOR} ${byte_compile_options} ${el_files} 2> /dev/null)
+fi
+exit 0;
+

@@ -1,0 +1,132 @@
+magit (0.8.2+20110220-1) unstable; urgency=low
+
+  [ Timo Juhani Lindfors ]
+  * New upstream release (closes: #586039, #586047, #591646, #591646, #597149).
+  * Provide debian/watch file (closes: #586051).
+  * Switch to dpkg-source 3.0 (quilt) format.
+  * Simplify debian/rules and upstream all debian/patches.
+  * Bump Standards-Version to 3.9.1 (no changes needed)
+  * Update copyright information in DEP-5 format.
+
+  [ Teemu Hukkanen ]
+  * Move package to collab-maint.
+  * Add install-info to Build-Depends.
+  * Add myself to Uploaders.
+
+ -- Teemu Hukkanen <tjhukkan@iki.fi>  Mon, 21 Mar 2011 21:02:51 +0200
+
+magit (0.7-1.1) unstable; urgency=low
+
+  [ Stefano Zacchiroli ]
+  * Non-maintainer upload.
+  * (Including pending maintainer changes, in wait of sponsoring.)
+  * Bump Standard-Version to 3.8.4 (no changes needed)
+  * Add Build-Dep on autoconf and automake, to support "autoreconf -fi"
+  * debian/rules: install NEWS as upstream changelog
+  * debian/docs: install README and AUTHORS as documentation
+
+  [ Marius Vollmer ]
+  * Added Homepage, Vcs-Git, and Vcs-Browser fields.
+  * Added git-core and emacs to Depends (closes: 529040).
+  * Use /usr/bin/emacsclient always (closes: 530266).
+  * Don't include /usr/share/info/dir.gz (closes: 549590).
+  * Switched to source format 3.0 (quilt).
+  * Don't ship any generated files; instead,
+    call autoreconf from debian/rules.
+
+ -- Stefano Zacchiroli <zack@debian.org>  Wed, 10 Mar 2010 09:49:14 +0100
+
+magit (0.7-1) unstable; urgency=low
+
+  * first official debian upload (closes: #518818)
+
+  [ RISKO Gergely ]
+  * pointer added to GFDL-1.2 in debian/copyright
+  * changed debian/compat to 7
+  * standards-version to 3.8.1
+
+  [ Marius Vollmer ]
+  * Follow Debian Emacsen policy.
+    - Use scripts in /usr/lib/emacsen-common/packages to
+      byte-compile during installation.
+  * List all authors in debian/copyright.
+  * Lintian fixes.
+
+  New upstream release.
+
+  * Tagging, on 't' and 'T'.
+
+  * Stashing, on 'z' and 'Z'.
+
+  * Wazzup, on 'w'.  Wazzup gives you an overview over how other
+    branches relate to the current one.
+
+  * There is more control over pushing.  'P' now takes a prefix argument
+    and pushing a branch without a default remote will ask for one.
+
+  * Logs have changed a bit: 'l' shows the traditional brief log, and
+    'L' shows a more verbose log.  Use the prefix arg to specify the
+    range of the log.
+
+  * M-x magit-status doesn't prompt anymore for a directory when invoked
+    from within a Git repository.  Use C-u to force a prompt.
+
+  * When you have nothing staged, 'c' will now explicitly ask whether to
+    commit everything instead of just going ahead and do it.  This can
+    be customized.
+
+  * The digit keys '1', '2', '3', and '4' now show sections on the
+    respective level and hide everything below.  With Meta, they work on
+    all sections; without, they work only on sections that are a parent
+    or child of the current section.
+
+  * Typing '+' and '-' will change the size of hunks, via the "-U"
+    option to git diff.  '0' resets hunks to their default size.
+
+  * Typing 'k' on the "Untracked files" section title will offer to
+    delete all untracked files.
+
+  * Magit understands a bit of git-svn: the status buffer shows unpushed
+    and unpulled commits, 'N r' runs git svn rebase, and 'N c' runs git
+    svn dcommit.
+
+  * Magit now also works when the direcory is accessed via tramp.
+
+  * M-x magit-status can also create new repositories when given a
+    directory that is not a Git repository.
+
+  * Magit works better with oldish Gits that don't understand "--graph",
+    for example.
+
+  * The name of the Git program and common options for it can be
+    customized.
+
+ -- Marius Vollmer <marius.vollmer@gmail.com>  Sun, 26 Apr 2009 19:13:16 +0300
+
+magit (0.6.1-1) unstable; urgency=low
+
+  * Fixed a bug that screwed up working with multiple repositories.
+
+ -- Marius Vollmer <marius.vollmer@gmail.com>  Mon, 13 Oct 2008 00:40:08 +0300
+
+magit (0.6-1) unstable; urgency=low
+
+  Almost everything has changed.  Please read the manual again.  Some
+  highlights:
+
+  * Magit now works with Git 1.6.0.  (John Wiegley)
+
+  * Support for interactive rewriting.
+
+  * Sections can be shown and hidden.
+
+  * Staging, unstaging, applying, reverting and discarding changes can now
+    be done line-by-line, not only hunk-by-hunk.
+
+ -- Marius Vollmer <marius.vollmer@gmail.com>  Mon, 13 Oct 2008 00:32:44 +0300
+
+magit (0.5-1) unstable; urgency=low
+
+  * First release.
+
+ -- Marius Vollmer <marius.vollmer@uni-dortmund.de>  Thu, 14 Aug 2008 02:11:00 +0300

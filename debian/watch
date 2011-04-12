@@ -1,0 +1,2 @@
+version=3
+opts=filenamemangle=s/^.*\/([^\/]*)$/magit-$1.tar.gz/ http://github.com/philjackson/magit/downloads /philjackson/magit/tarball/(\d.+)

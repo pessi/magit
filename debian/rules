@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	dh_auto_install -- PREFIX=/usr
+	mkdir -p $(CURDIR)/debian/magit/usr/share/emacs/site-lisp/magit
+	mv $(CURDIR)/debian/magit/usr/share/emacs/site-lisp/*.el $(CURDIR)/debian/magit/usr/share/emacs/site-lisp/magit
+	rm -f debian/magit/usr/share/emacs/site-lisp/*.elc
+	rm -f debian/magit/usr/share/info/dir
